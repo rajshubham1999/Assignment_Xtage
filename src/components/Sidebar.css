@@ -1,0 +1,29 @@
+.sidebar {
+    width: 250px;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-right: 1px solid #ddd;
+  }
+  
+  .draggable-node {
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .draggable-node:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .dragging {
+    opacity: 0.5;
+  }
+
+
+
+  
+  

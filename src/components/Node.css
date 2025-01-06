@@ -1,0 +1,104 @@
+   .node {
+    position: absolute;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: move;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 150px;
+    height: 100px;
+  }
+  
+  .node-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .edit-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 5px;
+  }
+  
+  .edit-btn:hover {
+    color: #007bff;
+  }
+  
+
+  .connection-point {
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+  }
+  
+  
+  .connection-point:hover {
+    background-color: #0056b3;
+  }
+  
+
+  
+
+
+
+
+
+
+  .connection-point {
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+  }
+  
+  .connection-point:hover {
+    background-color: #0056b3;
+  }
+  
+
+ 
+
+
+  .node {
+  position: absolute;
+  width: 100px;
+  height: 50px;
+  background-color: lightblue;
+  border: 1px solid blue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.node.connect-mode {
+  background-color: lightgreen;
+  cursor: crosshair;
+}
+
+
+
+
+
+
+
+
+
+
+
+
