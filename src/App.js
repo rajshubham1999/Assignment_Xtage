@@ -14,7 +14,6 @@ function App() {
   const [nodes, setNodes] = useState([]);
   const [connections, setConnections] = useState([]);
   const [zoom, setZoom] = useState(1);
-  const [undoStack, setUndoStack] = useState([]); 
 
   useEffect(() => {
     const savedWorkflow = loadWorkflow();
@@ -32,20 +31,14 @@ function App() {
   const handleZoomOut = () => setZoom((prevZoom) => Math.max(prevZoom - 0.1, 0.5));
 
   const handleNodeDrop = (node, position) => {
-    setUndoStack((prevStack) => [...prevStack, { nodes, connections }]); 
     setNodes((prevNodes) => [
       ...prevNodes,
       { ...node, position },
     ]);
   };
 
-  const handleUndo = () => {
-    if (undoStack.length > 0) {
-      const lastState = undoStack.pop();
-      setUndoStack([...undoStack]); 
-      setNodes(lastState.nodes);
-      setConnections(lastState.connections);
-    }
+  const handleDeleteNode = (nodeId) => {
+    setNodes((prevNodes) => prevNodes.filter((node) => node.id !== nodeId));
   };
 
   return (
@@ -59,7 +52,6 @@ function App() {
               <button onClick={handleSave}>Save Workflow</button>
               <button onClick={handleZoomIn}>Zoom In</button>
               <button onClick={handleZoomOut}>Zoom Out</button>
-              <button onClick={handleUndo}>Undo</button> 
             </nav>
           </header>
           <main>
@@ -77,6 +69,7 @@ function App() {
                       zoom={zoom}
                       setZoom={setZoom}
                       onNodeDrop={handleNodeDrop} 
+                      onDeleteNode={handleDeleteNode}  // Pass delete function to Canvas
                     />
                   </div>
                 }

@@ -131,3 +131,10 @@ const Canvas = ({ nodes, setNodes, zoom, connectMode }) => {
 };
 
 export default Canvas;
+
+
+
+
+
+
+
